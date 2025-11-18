@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+ 
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #4C763B;
+  --color-secondary: #B0CE88;
+  --color-accent: #FFFD8F;
+  --color-base-100: #ffffff;
+  --color-base-200: #f4f5f0;
+  --color-base-300: #e2e6da;
+  --color-neutral: #043915;
+  --color-info: #B0CE88;
+  --color-success: #4C763B;
+  --color-warning: #FFFD8F;
+  --color-error: #043915;
+}
+
+ 
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+@import "aos/dist/aos.css";
+
+ 
+* {
+  font-family: "Rubik", sans-serif;
+}
+
+ 
+a.active {
+  @apply bg-base-300;
+}

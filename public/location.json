@@ -1,0 +1,82 @@
+[
+  {
+    "city": "Dhaka",
+    "area": "Gulshan",
+    "lat": 23.7925,
+    "lng": 90.4078,
+    "phone": "+880 1711-123456",
+    "address": "Plot 12, Road 45, Gulshan-2"
+  },
+  {
+    "city": "Dhaka",
+    "area": "Dhanmondi",
+    "lat": 23.7461,
+    "lng": 90.3742,
+    "phone": "+880 1711-234567",
+    "address": "23/A Dhanmondi Road 27"
+  },
+  {
+    "city": "Chittagong",
+    "area": "Agrabad",
+    "lat": 22.3350,
+    "lng": 91.8325,
+    "phone": "+880 1811-345678",
+    "address": "Agrabad C/A"
+  },
+  {
+    "city": "Sylhet",
+    "area": "Zindabazar",
+    "lat": 24.8949,
+    "lng": 91.8687,
+    "phone": "+880 1911-456789",
+    "address": "Zindabazar"
+  },
+  {
+    "city": "Rajshahi",
+    "area": "Saheb Bazar",
+    "lat": 24.3745,
+    "lng": 88.6042,
+    "phone": "+880 1611-567890",
+    "address": "Saheb Bazar"
+  },
+  {
+    "city": "Khulna",
+    "area": "KDA Avenue",
+    "lat": 22.8456,
+    "lng": 89.5403,
+    "phone": "+880 1511-678901",
+    "address": "KDA Avenue"
+  },
+  {
+    "city": "Dhaka",
+    "area": "Mirpur",
+    "lat": 23.8103,
+    "lng": 90.3654,
+    "phone": "+880 1711-789012",
+    "address": "Mirpur-10"
+  },
+  {
+    "city": "Dhaka",
+    "area": "Uttara",
+    "lat": 23.8759,
+    "lng": 90.3795,
+    "phone": "+880 1811-890123",
+    "address": "Sector 7, Uttara"
+  },
+  {
+    "city": "Gazipur",
+    "area": "Tongi",
+    "lat": 23.8907,
+    "lng": 90.4067,
+    "phone": "+880 1911-901234",
+    "address": "Tongi Bazar"
+  },
+  {
+    "city": "Narayanganj",
+    "area": "Chashara",
+    "lat": 23.6238,
+    "lng": 90.5000,
+    "phone": "+880 1611-012345",
+    "address": "Chashara"
+  }
+]
