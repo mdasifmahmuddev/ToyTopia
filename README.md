@@ -4,8 +4,7 @@ A colorful website where parents can find awesome toys from local sellers. Brows
 
 ##  Live Link && Github Link
 **Live Site:** [https://toytopia-bd.netlify.app/]  
-**GitHub:** [https://github.com/programming-hero-web-course2/b12-a9-firesheild-mdasifmahmuddev]
-
+ 
 ##  ToyTopia Motivation
 I wanted to create something that helps families find great toys while supporting small local businesses. Parents can easily browse through different toys, see all the details they need, and even submit requests to try toys before buying with policy. It's basically bringing the local toy store experience online!
 
