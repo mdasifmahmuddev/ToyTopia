@@ -2,7 +2,7 @@
 
 A colorful website where parents can find awesome toys from local sellers. Browse toys, check reviews, and discover perfect gifts for kids!
 
-## Website Image
+## Home Page Preview
 
 ![ToyTopia Website](https://i.ibb.co.com/6RWFMNDS/toyTopia.png)
 
