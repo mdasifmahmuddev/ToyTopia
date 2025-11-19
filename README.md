@@ -11,7 +11,7 @@ A colorful website where parents can find awesome toys from local sellers. Brows
  
 
 
-##  Live Link && Github Link
+##  Live Link 
 
 
 
