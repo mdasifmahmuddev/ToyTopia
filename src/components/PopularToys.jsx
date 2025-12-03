@@ -29,7 +29,7 @@ const PopularToys = () => {
   if (loading) {
     return (
       <section className="py-16 bg-base-200">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="loading loading-spinner loading-lg text-primary"></span>
           <p className="mt-4 text-neutral/60">Loading popular toys...</p>
         </div>
@@ -40,7 +40,7 @@ const PopularToys = () => {
   if (error) {
     return (
       <section className="py-16 bg-base-200">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="alert alert-error">
             <span>Error loading toys: {error}</span>
           </div>
@@ -52,7 +52,7 @@ const PopularToys = () => {
   if (popularToys.length === 0) {
     return (
       <section className="py-16 bg-base-200">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="alert alert-warning">
             <span>No toys found in products.json</span>
           </div>
@@ -66,7 +66,7 @@ const PopularToys = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+            <span className="  text-sm font-semibold text-primary uppercase tracking-wide">
               Featured Collection
             </span>
           </div>
@@ -79,7 +79,7 @@ const PopularToys = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
           {popularToys.map((toy) => (
             <ProductCard key={toy.id} product={toy} />
           ))}

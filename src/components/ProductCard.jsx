@@ -3,6 +3,12 @@ import { Link } from "react-router";
 import { FaStar, FaBox } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
+  const truncateDescription = (text, maxLength = 80) => {
+    if (!text) return "High-quality toy perfect for children of all ages";
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + "...";
+  };
+
   return (
     <div className="bg-base-100 rounded-xl shadow hover:shadow-lg transition-all duration-300 overflow-hidden h-full flex flex-col">
       <div className="relative h-48 overflow-hidden bg-base-200">
@@ -21,6 +27,10 @@ const ProductCard = ({ product }) => {
           {product.toyName}
         </h2>
 
+        <p className="text-sm text-neutral/70 mb-3 min-h-[2.5rem]">
+          {truncateDescription(product.description)}
+        </p>
+
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1">
             <FaStar className="text-warning text-sm" />
@@ -33,22 +43,23 @@ const ProductCard = ({ product }) => {
           </div>
         </div>
 
-        <div className="mb-3">
-          <p className="text-xs text-neutral/60 mb-1">Seller</p>
-          <p className="text-sm font-medium text-neutral">{product.sellerName}</p>
+        <div className="mb-3 pb-3 border-b border-base-300">
+          <div className="flex justify-between items-center">
+            <div>
+              <p className="text-xs text-neutral/60 mb-0.5">Seller</p>
+              <p className="text-sm font-medium text-neutral">{product.sellerName}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-xs text-neutral/60 mb-0.5">Price</p>
+              <p className="text-xl font-bold text-primary">${product.price}</p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-auto">
-          <div className="flex items-end justify-between mb-3">
-            <div>
-              <p className="text-xs text-neutral/60">Price</p>
-              <p className="text-2xl font-bold text-primary">${product.price}</p>
-            </div>
-          </div>
-
           <Link to={`/product-details/${product.id}`}>
             <button className="w-full bg-primary text-white py-2.5 rounded-lg hover:bg-primary/90 transition-colors font-medium text-sm">
-              View Details
+              See More
             </button>
           </Link>
         </div>

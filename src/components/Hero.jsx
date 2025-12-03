@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -20,6 +21,7 @@ const Hero = () => {
       description: "Find the perfect toys from trusted local sellers",
       image: "https://i.ibb.co/Kj1cpcFz/2305-w056-n005-240-B-p15-240.jpg",
       buttonText: "Shop Now",
+      link: "/all-products"
     },
     {
       id: 2,
@@ -28,6 +30,7 @@ const Hero = () => {
       description: "Browse our collection of safe and fun toys",
       image: "https://i.ibb.co/RGbYTrYD/2305-w062-n005-149-B-p15-149.jpg",
       buttonText: "Explore Collection",
+      link: "/all-products"
     },
     {
       id: 3,
@@ -36,6 +39,7 @@ const Hero = () => {
       description: "Connect with toy sellers in your area",
       image: "https://i.ibb.co/67NLxZHQ/6275119.jpg",
       buttonText: "Get Started",
+      link: "/auth/register"
     },
   ];
 
@@ -62,11 +66,11 @@ const Hero = () => {
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
-        className="w-full h-[500px] md:h-[600px]"
+        className="w-full h-[60vh] md:h-[65vh] lg:h-[70vh]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative w-full h-[500px] md:h-[600px]">
+            <div className="relative w-full h-full">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -75,24 +79,24 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-neutral/90 via-neutral/60 to-transparent"></div>
               
               <div className="absolute inset-0 flex items-center">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
                   <div className="max-w-xl" data-aos="fade-up">
                     <span className="inline-block bg-secondary/90 text-neutral text-sm font-semibold px-4 py-2 rounded-full mb-4">
                       {slide.subtitle}
                     </span>
                     
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
                       {slide.title}
                     </h1>
                     
-                    <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed">
+                    <p className="text-base md:text-lg text-white/90 mb-6 leading-relaxed">
                       {slide.description}
                     </p>
                     
-                    <button className="btn btn-primary text-white gap-2 btn-lg">
+                    <Link to={slide.link} className="btn btn-primary text-white gap-2 btn-lg">
                       {slide.buttonText}
                       <FaArrowRight />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -105,5 +109,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-  

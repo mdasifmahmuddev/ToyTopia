@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLoaderData, useParams, useNavigate } from 'react-router';
-import { FaStar, FaBox, FaUser, FaShoppingCart, FaArrowLeft, FaTruck, FaShieldAlt, FaGift, FaHeart, FaShareAlt } from 'react-icons/fa';
+import { AuthContext } from '../provider/AuthProvider';
+import { FaStar, FaBox, FaUser, FaShoppingCart, FaArrowLeft, FaTruck, FaShieldAlt, FaHeart } from 'react-icons/fa';
 import { MdEmail, MdVerified, MdLocalOffer } from 'react-icons/md';
 import { BiPackage } from 'react-icons/bi';
 import { AiFillSafetyCertificate } from 'react-icons/ai';
+import toast from 'react-hot-toast';
 
 const ProductDetails = () => {
+  const { user } = useContext(AuthContext);
   const products = useLoaderData();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -27,6 +30,15 @@ const ProductDetails = () => {
     }
   }, [product]);
 
+  useEffect(() => {
+    if (user) {
+      setFormData({
+        name: user.displayName || '',
+        email: user.email || ''
+      });
+    }
+  }, [user]);
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -36,8 +48,15 @@ const ProductDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!user) {
+      toast.error("Please login to place an order!");
+      navigate('/auth/login', { state: `/product-details/${id}` });
+      return;
+    }
+
     setShowSuccess(true);
-    setFormData({ name: '', email: '' });
+    toast.success("Order request submitted successfully!");
     
     setTimeout(() => {
       setShowSuccess(false);
@@ -109,8 +128,6 @@ const ProductDetails = () => {
                 <span className="text-xs text-gray-500">/ 5.0</span>
               </div>
             </div>
-
-             
           </div>
 
           <div className="space-y-4">
@@ -188,6 +205,20 @@ const ProductDetails = () => {
                 <FaShoppingCart className="text-primary text-lg" />
                 Try Now
               </h3>
+
+              {!user && (
+                <div className="alert alert-warning mb-4">
+                  <div className="flex flex-col gap-2">
+                    <span className="font-semibold">Please login to place an order</span>
+                    <button 
+                      onClick={() => navigate('/auth/login', { state: `/product-details/${id}` })}
+                      className="btn btn-sm btn-primary"
+                    >
+                      Login Now
+                    </button>
+                  </div>
+                </div>
+              )}
               
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="form-control">
@@ -205,6 +236,7 @@ const ProductDetails = () => {
                     placeholder="Enter your name"
                     className="input input-bordered input-sm w-full focus:input-primary"
                     required
+                    disabled={!user}
                   />
                 </div>
 
@@ -223,15 +255,17 @@ const ProductDetails = () => {
                     placeholder="Enter your email"
                     className="input input-bordered input-sm w-full focus:input-primary"
                     required
+                    disabled={!user}
                   />
                 </div>
 
                 <button 
                   type="submit" 
                   className="btn btn-primary w-full text-base-100 font-bold hover:btn-success transition-colors"
+                  disabled={!user}
                 >
                   <FaShoppingCart className="mr-2 text-sm" />
-                  Try Now
+                  {user ? 'Try Now' : 'Login to Order'}
                 </button>
               </form>
 
@@ -242,8 +276,6 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );

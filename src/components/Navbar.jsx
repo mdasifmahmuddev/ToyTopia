@@ -55,8 +55,8 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-gradient-to-r from-primary via-primary to-secondary shadow-md sticky top-0 z-50 bg-green-700">
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className="bg-gradient-to-r from-primary via-primary to-secondary shadow-md sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="lg:hidden mobile-menu-container">
             <button
@@ -105,11 +105,17 @@ const Navbar = () => {
             <NavLink to="/" className={navLinkClass}>
               Home
             </NavLink>
+            <NavLink to="/all-products" className={navLinkClass}>
+              All Products
+            </NavLink>
             <NavLink to="/store-location" className={navLinkClass}>
               Store Location
             </NavLink>
-            <NavLink to="/all-products" className={navLinkClass}>
-              All Products
+            <NavLink to="/about" className={navLinkClass}>
+              About Us
+            </NavLink>
+            <NavLink to="/contact" className={navLinkClass}>
+              Contact
             </NavLink>
             {user && (
               <NavLink to="/my-profile" className={navLinkClass}>
@@ -238,6 +244,13 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
+              to="/all-products"
+              className={mobileNavLinkClass}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              All Products
+            </NavLink>
+            <NavLink
               to="/store-location"
               className={mobileNavLinkClass}
               onClick={() => setIsMobileMenuOpen(false)}
@@ -245,11 +258,18 @@ const Navbar = () => {
               Store Location
             </NavLink>
             <NavLink
-              to="/all-products"
+              to="/about"
               className={mobileNavLinkClass}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              All Products
+              About Us
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className={mobileNavLinkClass}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
             </NavLink>
             {user && (
               <NavLink

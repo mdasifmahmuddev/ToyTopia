@@ -12,19 +12,42 @@ import HomeLayout from "../layouts/HomeLayout";
 import ProductPage from "../pages/ProductPage";
 import StoreLocation from "../pages/StoreLocation";
 import AllProduct from "../pages/AllProduct";
+import AboutUs from "../pages/AboutUs";
+import Contact from "../pages/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout />,
     children: [
-      
       {
         path: "",
         element: <Home />,
       },
-      
-     
+      {
+        path: "/all-products",
+        element: <AllProduct />,
+        loader: async () => {
+          const response = await fetch("/products.json");
+          return response.json();
+        },
+      },
+      {
+        path: "/store-location",
+        element: <StoreLocation />,
+        loader: async () => {
+          const response = await fetch("/products.json");
+          return response.json();
+        },
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
       {
         path: "/product/:id",
         element: <ProductPage />,
@@ -33,22 +56,6 @@ const router = createBrowserRouter([
           return response.json();
         },
       },
-      
-      
-      {
-        path: "/store-location",
-        element: (
-          <PrivateRoute>
-            <StoreLocation />
-          </PrivateRoute>
-        ),
-        loader: async () => {
-          const response = await fetch("/products.json");
-          return response.json();
-        },
-      },
-      
-       
       {
         path: "/my-profile",
         element: (
@@ -57,24 +64,8 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      
-       
-      {
-        path: "/all-products",
-        element: (
-          <PrivateRoute>
-            <AllProduct />
-          </PrivateRoute>
-        ),
-        loader: async () => {
-          const response = await fetch("/products.json");
-          return response.json();
-        },
-      },
     ],
   },
-  
- 
   {
     path: "/auth",
     element: <AuthLayout />,
@@ -93,19 +84,11 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
-  
   {
     path: "/product-details/:id",
-    element: (
-      <PrivateRoute>
-        <ProductDetails />
-      </PrivateRoute>
-    ),
+    element: <ProductDetails />,
     loader: () => fetch("/products.json").then((res) => res.json()),
   },
-  
-   
   {
     path: "*",
     element: <NotFound />,
