@@ -57,6 +57,11 @@ const router = createBrowserRouter([
         },
       },
       {
+        path: "/product-details/:id",
+        element: <ProductDetails />,
+        loader: () => fetch("/products.json").then((res) => res.json()),
+      },
+      {
         path: "/my-profile",
         element: (
           <PrivateRoute>
@@ -83,11 +88,6 @@ const router = createBrowserRouter([
         element: <ForgetPassword />,
       },
     ],
-  },
-  {
-    path: "/product-details/:id",
-    element: <ProductDetails />,
-    loader: () => fetch("/products.json").then((res) => res.json()),
   },
   {
     path: "*",
