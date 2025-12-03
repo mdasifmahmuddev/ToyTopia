@@ -1,117 +1,120 @@
 import React from "react";
-import { Shield, Store, Users, Star } from "lucide-react";
+import { Handshake, MessageCircleHeart, ShieldCheck, Sparkles, Package, TrendingUp, ThumbsUp, Trophy } from "lucide-react";
 
 const WhyChooseUs = () => {
   const features = [
     {
-      icon: Store,
+      icon: Handshake,
       title: "Support Local Sellers",
-      description: "Connect directly with passionate local toy sellers in your community"
+      description: "Connect directly with passionate local toy sellers in your community",
+      gradient: "from-cyan-500 to-blue-600"
     },
     {
-      icon: Users,
+      icon: MessageCircleHeart,
       title: "Community Driven",
-      description: "Read real reviews and ratings from parents just like you"
+      description: "Read real reviews and ratings from parents just like you",
+      gradient: "from-pink-500 to-rose-600"
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Safe & Trusted",
-      description: "Verified sellers and quality-checked toys for your peace of mind"
+      description: "Verified sellers and quality-checked toys for your peace of mind",
+      gradient: "from-emerald-500 to-teal-600"
     },
     {
-      icon: Star,
+      icon: Sparkles,
       title: "Discover & Share",
-      description: "Browse unique toys and share your experiences with other families"
+      description: "Browse unique toys and share your experiences with other families",
+      gradient: "from-amber-500 to-orange-600"
     }
   ];
 
+  const stats = [
+    { label: "Local Sellers", value: "50+", icon: Handshake, subtext: "In your community", color: "text-cyan-600" },
+    { label: "Toy Listings", value: "1000+", icon: Package, subtext: "Unique toys to explore", color: "text-purple-600" },
+    { label: "Parent Reviews", value: "5K+", icon: MessageCircleHeart, subtext: "Real family feedback", color: "text-rose-600" },
+    { label: "Happy Customers", value: "98%", icon: ThumbsUp, subtext: "Satisfaction rate", color: "text-emerald-600" }
+  ];
+
   return (
-    <div className="w-full py-12 md:py-20 px-4 bg-gradient-to-b from-base-100 to-base-200">
+    <div className="w-full py-16 pb-8 px-4 bg-base-200">
       <div className="max-w-7xl mx-auto">
          
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-4 text-neutral">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-2 text-neutral">
             Why ToyTopia?
           </h2>
-          <p className="text-base md:text-lg text-base-content/70 max-w-2xl mx-auto px-4">
-            A vibrant marketplace connecting families with local toy sellers. Discover, review, and find the perfect toys for your kids!
+          <p className="text-center text-base-content/70">
+            A vibrant marketplace connecting families with local toy sellers
           </p>
         </div>
 
        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group bg-base-100 p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-base-300 hover:border-primary/30"
+                className="group relative bg-base-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden"
               >
-                <div className="bg-primary/10 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-5 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <Icon className="text-primary" size={28} strokeWidth={2} />
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10`}>
+                  <Icon className="text-white" size={32} strokeWidth={2.5} />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-neutral mb-2 md:mb-3">
+                
+                <h3 className="text-xl font-bold text-neutral mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-sm md:text-base text-base-content/70 leading-relaxed">
+                <p className="text-sm text-base-content/70 leading-relaxed relative z-10">
                   {feature.description}
                 </p>
+                
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             );
           })}
         </div>
 
          
-        <div className="flex justify-center">
-          <div className="w-full max-w-4xl bg-base-100 rounded-2xl shadow-xl border border-base-300 overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-base-300">
-              <div className="p-6 md:p-8 text-center hover:bg-base-50 transition-colors duration-200">
-                <div className="text-base-content/70 text-xs md:text-sm font-medium uppercase tracking-wide mb-2">
-                  Local Sellers
-                </div>
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1">
-                  50+
-                </div>
-                <div className="text-xs md:text-sm text-base-content/60">
-                  In your community
-                </div>
-              </div>
-              
-              <div className="p-6 md:p-8 text-center hover:bg-base-50 transition-colors duration-200">
-                <div className="text-base-content/70 text-xs md:text-sm font-medium uppercase tracking-wide mb-2">
-                  Toy Listings
-                </div>
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1">
-                  1000+
-                </div>
-                <div className="text-xs md:text-sm text-base-content/60">
-                  Unique toys to explore
-                </div>
-              </div>
-              
-              <div className="p-6 md:p-8 text-center hover:bg-base-50 transition-colors duration-200">
-                <div className="text-base-content/70 text-xs md:text-sm font-medium uppercase tracking-wide mb-2">
-                  Parent Reviews
-                </div>
-                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-1">
-                  5K+
-                </div>
-                <div className="text-xs md:text-sm text-base-content/60">
-                  Real family feedback
-                </div>
-              </div>
+        <div className="bg-base-100 rounded-2xl p-8 shadow-xl border-2 border-primary/10">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-3">
+              <Trophy className="text-primary" size={20} />
+              <span className="text-primary font-semibold text-sm">Our Impact</span>
             </div>
+            <h3 className="text-2xl font-bold text-neutral">Real numbers from our growing community</h3>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="relative group bg-gradient-to-br from-base-200 to-base-100 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-base-300/50">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                  
+                  <div className="relative bg-white w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                    <Icon className={stat.color} size={28} strokeWidth={2.5} />
+                  </div>
+                  <div className={`text-4xl font-bold ${stat.color} mb-1`}>
+                    {stat.value}
+                  </div>
+                  <div className="text-sm font-semibold text-neutral mb-1">
+                    {stat.label}
+                  </div>
+                  <div className="text-xs text-base-content/60">
+                    {stat.subtext}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         
-        <div className="mt-12 md:mt-16 text-center">
-          <div className="inline-block bg-primary/5 border-2 border-primary/20 rounded-2xl px-6 py-4 md:px-8 md:py-5">
-            <p className="text-sm md:text-base text-base-content/80">
-              <span className="font-bold text-primary">Join our community</span> — Log in to browse toys, read detailed reviews, and share your own experiences with other families!
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

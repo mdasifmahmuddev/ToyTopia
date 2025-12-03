@@ -65,16 +65,10 @@ const PopularToys = () => {
     <section className="py-16 bg-base-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="  text-sm font-semibold text-primary uppercase tracking-wide">
-              Featured Collection
-            </span>
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral mb-2">
+          <h2 className="text-4xl font-bold text-center mb-2 text-neutral">
             Popular Toys
           </h2>
-          <div className="h-1 w-12 bg-primary rounded-full mb-3"></div>
-          <p className="text-sm text-neutral/60 max-w-2xl">
+          <p className="text-center text-base-content/70 mb-8">
             Our best-selling toys loved by children everywhere
           </p>
         </div>
