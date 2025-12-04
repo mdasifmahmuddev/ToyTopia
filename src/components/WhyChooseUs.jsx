@@ -84,12 +84,23 @@ const WhyChooseUs = () => {
          
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border-2 border-primary/10">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-3">
-              <Trophy className="text-primary" size={20} />
-              <span className="text-primary font-semibold text-sm">Our Impact</span>
+            <div className="inline-flex items-center gap-2   px-4 py-2 rounded-full mb-3">
+              
+              
+              <h2 className="text-4xl font-bold mb-2 text-neutral drop-shadow-sm">
+             Our Impact
+          </h2>
+
+
+
             </div>
-            <h3 className="text-2xl font-bold text-neutral">Real numbers from our growing community</h3>
-          </div>
+
+            <p className="text-center text-base-content/70 drop-shadow-sm">
+           Real numbers from our growing community
+          </p>
+
+
+           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => {
