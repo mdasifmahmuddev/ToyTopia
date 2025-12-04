@@ -2,11 +2,11 @@
 
 A colorful website where parents can find awesome toys from local sellers. Browse toys, check reviews, and discover perfect gifts for kids!
 
-## Home Page Preview
+## Page Preview
 
-![ToyTopia Website](https://i.ibb.co.com/0RvpsFrW/toyTopia.webp)
-
- 
+| Home Page | All Products |
+|----------|--------------|
+| ![Home](https://i.ibb.co.com/c7rxvhR/Fire-Shot-Capture-007-Home-Toy-Store-Discover-Local-Toy-Treasures-localhost.png) | ![Products](https://i.ibb.co.com/bMsb1SSH/Fire-Shot-Capture-008-All-Products-Toy-Topia-Browse-Our-Collection-toytopia-bd-netlify-app.png) |
 
  
 
