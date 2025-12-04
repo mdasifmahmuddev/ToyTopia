@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-neutral/90 via-neutral/60 to-transparent"></div>
               
               <div className="absolute inset-0 flex items-center">
-                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                   <div className="max-w-xl" data-aos="fade-up">
                     <span className="inline-block bg-secondary/90 text-neutral text-sm font-semibold px-4 py-2 rounded-full mb-4">
                       {slide.subtitle}

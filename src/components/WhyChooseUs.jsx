@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="w-full py-16 pb-8 px-4 relative overflow-hidden">
+    <div className="w-full py-16 pb-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-base-200"></div>
       <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=1600)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
       <div className="max-w-7xl mx-auto relative z-10">
