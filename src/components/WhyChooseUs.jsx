@@ -37,14 +37,16 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="w-full py-16 pb-8 px-4 bg-base-200">
-      <div className="max-w-7xl mx-auto">
+    <div className="w-full py-16 pb-8 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-base-200"></div>
+      <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=1600)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
+      <div className="max-w-7xl mx-auto relative z-10">
          
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-2 text-neutral">
+          <h2 className="text-4xl font-bold mb-2 text-neutral drop-shadow-sm">
             Why ToyTopia?
           </h2>
-          <p className="text-center text-base-content/70">
+          <p className="text-center text-base-content/70 drop-shadow-sm">
             A vibrant marketplace connecting families with local toy sellers
           </p>
         </div>
@@ -56,7 +58,7 @@ const WhyChooseUs = () => {
             return (
               <div
                 key={index}
-                className="group relative bg-base-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+                className="group relative bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden border border-base-300/30"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
@@ -80,7 +82,7 @@ const WhyChooseUs = () => {
         </div>
 
          
-        <div className="bg-base-100 rounded-2xl p-8 shadow-xl border-2 border-primary/10">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border-2 border-primary/10">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-3">
               <Trophy className="text-primary" size={20} />
