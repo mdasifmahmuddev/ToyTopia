@@ -7,126 +7,132 @@ const WhyChooseUs = () => {
       icon: Handshake,
       title: "Support Local Sellers",
       description: "Connect directly with passionate local toy sellers in your community",
-      gradient: "from-cyan-500 to-blue-600"
+      gradient: "from-primary to-success"
     },
     {
       icon: MessageCircleHeart,
       title: "Community Driven",
       description: "Read real reviews and ratings from parents just like you",
-      gradient: "from-pink-500 to-rose-600"
+      gradient: "from-secondary to-info"
     },
     {
       icon: ShieldCheck,
       title: "Safe & Trusted",
       description: "Verified sellers and quality-checked toys for your peace of mind",
-      gradient: "from-emerald-500 to-teal-600"
+      gradient: "from-success to-primary"
     },
     {
       icon: Sparkles,
       title: "Discover & Share",
       description: "Browse unique toys and share your experiences with other families",
-      gradient: "from-amber-500 to-orange-600"
+      gradient: "from-info to-secondary"
     }
   ];
 
   const stats = [
-    { label: "Local Sellers", value: "50+", icon: Handshake, subtext: "In your community", color: "text-cyan-600" },
-    { label: "Toy Listings", value: "1000+", icon: Package, subtext: "Unique toys to explore", color: "text-purple-600" },
-    { label: "Parent Reviews", value: "5K+", icon: MessageCircleHeart, subtext: "Real family feedback", color: "text-rose-600" },
-    { label: "Happy Customers", value: "98%", icon: ThumbsUp, subtext: "Satisfaction rate", color: "text-emerald-600" }
+    { label: "Local Sellers", value: "50+", icon: Handshake, subtext: "In your community", color: "text-primary", bgColor: "bg-primary/20" },
+    { label: "Toy Listings", value: "1000+", icon: Package, subtext: "Unique toys to explore", color: "text-secondary", bgColor: "bg-secondary/20" },
+    { label: "Parent Reviews", value: "5K+", icon: MessageCircleHeart, subtext: "Real family feedback", color: "text-success", bgColor: "bg-success/20" },
+    { label: "Happy Customers", value: "98%", icon: ThumbsUp, subtext: "Satisfaction rate", color: "text-info", bgColor: "bg-info/20" }
   ];
 
   return (
-    <div className="w-full py-16 pb-8 relative overflow-hidden">
-      <div className="absolute inset-0 bg-base-200"></div>
-      <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=1600)', backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
-      <div className="max-w-7xl mx-auto relative z-10">
+    <div className="w-full py-20 pb-12 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200 to-base-300"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10 px-4">
          
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-2 text-neutral drop-shadow-sm">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
+            <Sparkles className="text-primary" size={18} />
+            <span className="text-sm font-semibold text-primary">Why Choose Us</span>
+          </div>
+          <h2 className="text-5xl font-bold mb-4 text-neutral">
             Why ToyTopia?
           </h2>
-          <p className="text-center text-base-content/70 drop-shadow-sm">
+          <p className="text-lg text-neutral/70 max-w-2xl mx-auto">
             A vibrant marketplace connecting families with local toy sellers
           </p>
         </div>
 
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden border border-base-300/30"
+                className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-base-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
-                
-                <div className={`bg-gradient-to-br ${feature.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative z-10`}>
-                  <Icon className="text-white" size={32} strokeWidth={2.5} />
+                <div className={`bg-gradient-to-br ${feature.gradient} w-14 h-14 rounded-xl flex items-center justify-center mb-5 shadow-md group-hover:scale-110 transition-all duration-300`}>
+                  <Icon className="text-white" size={28} strokeWidth={2.5} />
                 </div>
                 
-                <h3 className="text-xl font-bold text-neutral mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-lg font-bold text-neutral mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-base-content/70 leading-relaxed relative z-10">
+                <p className="text-sm text-neutral/70 leading-relaxed">
                   {feature.description}
                 </p>
-                
-                <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             );
           })}
         </div>
 
-         
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border-2 border-primary/10">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2   px-4 py-2 rounded-full mb-3">
-              
-              
-              <h2 className="text-4xl font-bold mb-2 text-neutral drop-shadow-sm">
-             Our Impact
-          </h2>
-
-
-
-            </div>
-
-            <p className="text-center text-base-content/70 drop-shadow-sm">
-           Real numbers from our growing community
-          </p>
-
-
-           </div>
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=1600)',
+            }}
+          ></div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className="relative group bg-gradient-to-br from-base-200 to-base-100 rounded-xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-base-300/50">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                  
-                  <div className="relative bg-white w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-                    <Icon className={stat.color} size={28} strokeWidth={2.5} />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-success/90 to-neutral/95 backdrop-blur-sm"></div>
+          
+          <div className="relative z-10 p-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-full mb-4 border border-white/30">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                <span className="text-sm font-semibold text-white">Live Stats</span>
+              </div>
+              
+              <h2 className="text-5xl font-bold mb-4 text-white">
+                Our Impact
+              </h2>
+              
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
+                Real numbers from our growing community
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                return (
+                  <div 
+                    key={index} 
+                    className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center border border-white/20 hover:bg-white/20 hover:-translate-y-2 transition-all duration-300"
+                  >
+                    <div className={`${stat.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300`}>
+                      <Icon className="text-white" size={32} strokeWidth={2.5} />
+                    </div>
+                    
+                    <div className="text-5xl font-bold text-white mb-2">
+                      {stat.value}
+                    </div>
+                    
+                    <div className="text-base font-semibold text-white mb-1">
+                      {stat.label}
+                    </div>
+                    
+                    <div className="text-sm text-white/80">
+                      {stat.subtext}
+                    </div>
                   </div>
-                  <div className={`text-4xl font-bold ${stat.color} mb-1`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm font-semibold text-neutral mb-1">
-                    {stat.label}
-                  </div>
-                  <div className="text-xs text-base-content/60">
-                    {stat.subtext}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-
         
       </div>
     </div>
